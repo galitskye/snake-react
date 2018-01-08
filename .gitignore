@@ -1,9 +1,9 @@
 .idea/
+*.css
+package-lock.json
 
 # dependencies
-./node_modules
-./src/scss/*.css
-package-lock.json
+node_modules
 
 # production
 /build
