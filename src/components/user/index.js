@@ -10,7 +10,6 @@ import {
 
 class User extends Component {
     render() {
-        console.log(this.props)
         return (
             <div className="user-info">
                 <h1>
@@ -29,6 +28,7 @@ class User extends Component {
                     >Start game<Icon left>directions</Icon>
                     </Button>
                 </div>
+                <p>Use keyboard directions to change snake direction!</p>
                 <h4 className="user-score">
                     Your score: {this.props.score}
                 </h4>

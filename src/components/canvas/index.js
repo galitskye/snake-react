@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stage, Rect, Layer, Animation } from 'react-konva';
+import { Stage, Rect, Layer } from 'react-konva';
 
 function Canvas(props) {
 

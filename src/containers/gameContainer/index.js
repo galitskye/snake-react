@@ -7,7 +7,7 @@ const GameContainer = (props) => {
         return <Game />;
     } else {
         return (
-            <h4 class="start-game">Please, press "Start game"!</h4>
+            <h4 className="start-game">Please, press "Start game"!</h4>
         );
     }
 }
