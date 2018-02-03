@@ -1,35 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import App from './components/App';
+import Main from './containers/main';
 import './scss/styles.css';
 
-const store = createStore(test);
+import reducer from './reducers';
 
-function test(state = [], {type, payload}) {
-    if(type === 'NEW_HEAD') {
-        return [
-            ...state,
-            payload
-        ]
-    }
-    return state;
-}
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-store.subscribe(() => {
-     console.log('subscribe', store.getState());
-});
+ReactDOM.render(
+    <Provider store={store}>
+        <Main />
+    </Provider>,
+    document.getElementById('root')
+);
 
-store.dispatch({
-    type: 'NEW_HEAD',
-    payload: [1,4]
-});
-
-store.dispatch({
-    type: 'NEW_HEAD',
-    payload: [2,4]
-});
-
-ReactDOM.render(<App />, document.getElementById('root'));
+export { store };
